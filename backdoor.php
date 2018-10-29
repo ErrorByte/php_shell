@@ -145,7 +145,7 @@ $proc = file($self);
 $replace = str_replace('$password = '."'".$password."'", '$password = '."'".$_POST['pass_baru']."'", $proc);
 $ganti = file_put_contents($self, $replace);
 if($ganti) {
-echo "Password Save As ".$_POST['pass_baru'];
+echo "Password Save As <font color='red'>".$_POST['pass_baru']."</font>";
 } else {
 echo 'Failed Change Password !!!';
 }
