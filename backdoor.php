@@ -152,7 +152,9 @@ text-decoration: none;
 </style>
 <div class="preloader">
   <div class="loading">
-    <font size="20"><b><i>ErrorByte Backdoor....</i></b></font>
+  <center><img height="200" src="https://i.screenshot.net/k4z06un"/><center>
+  <br><br>
+    <font size="5"><b><i>ErrorByte Backdoor</i></b></font>
   </div>
 </div>
 <script>
